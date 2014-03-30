@@ -114,10 +114,10 @@ In XML:
 ``` xml
 <!-- src/Acme/AddressBundle/Resources/config/doctrine/Address.orm.xml -->
 <?xml version="1.0" encoding="UTF-8"?>
+
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
-                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
-                                      http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
     <entity name="Acme\AddressBundle\Entity\Address" table="acme_address">
         <id name="id" type="integer" column="id">
