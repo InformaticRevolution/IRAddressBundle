@@ -1,0 +1,2 @@
+db_driver: orm
+address_class: Acme\AddressBundle\Entity\Address

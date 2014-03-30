@@ -1,0 +1,8 @@
+db_driver: orm
+address_class: Acme\AddressBundle\Entity\Address
+address_manager: acme_address.manager.address
+address:
+    form:
+        type: acme_address
+        name: acme_address_form
+        validation_groups: [acme_address]
