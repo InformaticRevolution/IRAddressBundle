@@ -5,7 +5,7 @@ form:
         last_name: Nom
         company_name: Société
         street: Adresse
-        division: État / Province
+        division: État/Province/Région
         postal_code: Code postal
         city: Ville
         country: Pays

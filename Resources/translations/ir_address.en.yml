@@ -4,9 +4,9 @@ form:
         first_name: First name
         last_name: Last name
         company_name: Company
-        street: Street zddress
-        division: State / Province
-        postal_code: Postal code
+        street: Street address
+        division: State/Province/Region
+        postal_code: ZIP/Postal code
         city: City
         country: Country
         home_phone: Home phone
