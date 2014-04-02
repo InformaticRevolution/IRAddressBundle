@@ -11,7 +11,7 @@
 
 namespace IR\Bundle\AddressBundle\Tests\Manager;
 
-use IR\Bundle\AddressBundle\Manager\AddressManager;
+use IR\Bundle\AddressBundle\Manager\AddressManagerInterface;
 
 /**
  * Address Manager Test.
@@ -23,7 +23,7 @@ class AddressManagerTest extends \PHPUnit_Framework_TestCase
     const ADDRESS_CLASS = 'IR\Bundle\AddressBundle\Tests\TestAddress';
  
     /**
-     * @var AddressManager
+     * @var AddressManagerInterface
      */
     protected $addressManager;      
     

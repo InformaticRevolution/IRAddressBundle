@@ -11,10 +11,11 @@
 
 namespace IR\Bundle\AddressBundle\Tests\Model;
 
-use IR\Bundle\CustomerBundle\Model\Address;
+use IR\Bundle\AddressBundle\Model\AddressInterface;
+use IR\Bundle\AddressBundle\Model\CountryInterface;
 
 /**
- * AddressTest.
+ * Address Test.
  *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
@@ -45,7 +46,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
             array('division', 'NewYork', null),
             array('postalCode', '63419', null),
             array('city', 'New York', null),
-            array('country', 'US', null),
+            array('country', $this->getCountry(), null),
             array('phone', '132-149-0269', null),
             array('createdAt', new \DateTime(), null),
             array('updatedAt', new \DateTime(), null),              
@@ -53,10 +54,18 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     }      
     
     /**
-     * @return Address
+     * @return AddressInterface
      */
     protected function getAddress()
     {
         return $this->getMockForAbstractClass('IR\Bundle\AddressBundle\Model\Address');
-    }      
+    } 
+    
+    /**
+     * @return CountryInterface
+     */
+    protected function getCountry()
+    {
+        return $this->getMockForAbstractClass('IR\Bundle\AddressBundle\Model\CountryInterface');
+    }     
 }

@@ -126,16 +126,16 @@ interface AddressInterface
     /**
      * Returns the country.
      *
-     * @return string
+     * @return CountryInterface
      */
     public function getCountry();
 
     /**
      * Sets the country.
      *
-     * @param string $country
+     * @param CountryInterface $country
      */
-    public function setCountry($country);    
+    public function setCountry(CountryInterface $country);    
     
     /**
      * Returns the phone.

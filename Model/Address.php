@@ -59,7 +59,7 @@ abstract class Address implements AddressInterface
     protected $city;
 
     /**
-     * @var string
+     * @var CountryInterface
      */
     protected $country;  
      
@@ -210,7 +210,7 @@ abstract class Address implements AddressInterface
     /**
      * {@inheritdoc}
      */
-    public function setCountry($country)   
+    public function setCountry(CountryInterface $country)   
     {
         $this->country = $country;
     }

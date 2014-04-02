@@ -10,3 +10,8 @@ form:
         city: City
         country: Country
         phone: Phone
+        
+    country:
+        name: Name
+        iso_code: Code
+        enabled: Enabled         

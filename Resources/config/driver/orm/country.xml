@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+  
+    <parameters>
+        <parameter key="ir_address.manager.country.class">IR\Bundle\AddressBundle\Doctrine\CountryManager</parameter>
+        <parameter key="ir_address.form.type.country_choice.class">IR\Bundle\AddressBundle\Form\Type\CountryEntityChoiceType</parameter>
+    </parameters>
+
+    <services>        
+        <service id="ir_address.manager.country.default" class="%ir_address.manager.country.class%" public="false">
+            <argument type="service" id="ir_address.entity_manager" />
+            <argument>%ir_address.model.country.class%</argument>
+        </service>          
+    </services>  
+
+</container>

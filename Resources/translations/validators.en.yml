@@ -1,24 +1,33 @@
 ir_address:
     address: 
         first_name:
-            not_blank: Please enter a first name
-            min_length: The first name must be at least {{ limit }} characters long
-            max_length: The first name cannot be longer than {{ limit }} characters  
+            blank: Please enter a first name
+            short: The first name must be at least {{ limit }} characters long
+            long: The first name cannot be longer than {{ limit }} characters  
 
         last_name:
-            not_blank: Please enter a last name
-            min_length: The last name must be at least {{ limit }} characters long
-            max_length: The last name cannot be longer than {{ limit }} characters  
+            blank: Please enter a last name
+            short: The last name must be at least {{ limit }} characters long
+            long: The last name cannot be longer than {{ limit }} characters  
 
         street: 
-            not_blank: Please enter a street
-            min_length: The street must be at least {{ limit }} characters long
-            max_length: The street cannot be longer than {{ limit }} characters
+            blank: Please enter a street
+            short: The street must be at least {{ limit }} characters long
+            long: The street cannot be longer than {{ limit }} characters
 
         city: 
-            not_blank: Please enter a city
-            min_length: The city must be at least {{ limit }} characters long
-            max_length: The city cannot be longer than {{ limit }} characters
+            blank: Please enter a city
+            short: The city must be at least {{ limit }} characters long
+            long: The city cannot be longer than {{ limit }} characters
         
         country:
-            not_blank: Please select a country            
+            unset: Please select a country        
+            
+    country:
+        name:
+            blank: Please enter a name
+            short: The name must be at least {{ limit }} characters long
+            long: The name cannot be longer than {{ limit }} characters 
+            
+        iso_code: 
+            blank: Invalid code              

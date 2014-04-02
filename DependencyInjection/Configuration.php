@@ -47,10 +47,13 @@ class Configuration implements ConfigurationInterface
                     ->cannotBeEmpty()
                 ->end()  
                 ->scalarNode('address_class')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('country_class')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('address_manager')->defaultValue('ir_address.manager.address.default')->end() 
+                ->scalarNode('country_manager')->defaultValue('ir_address.manager.country.default')->end() 
             ->end();            
         
-    $this->addAddressSection($rootNode);
+        $this->addAddressSection($rootNode);
+        $this->addCountrySection($rootNode);
         
         return $treeBuilder;
     }
@@ -71,6 +74,30 @@ class Configuration implements ConfigurationInterface
                                 ->arrayNode('validation_groups')
                                     ->prototype('scalar')->end()
                                     ->defaultValue(array('Address', 'Default'))
+                                ->end()                
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
+    } 
+    
+    private function addCountrySection(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('country')
+                    ->addDefaultsIfNotSet()
+                    ->canBeUnset()
+                    ->children()
+                        ->arrayNode('form')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->scalarNode('type')->defaultValue('ir_address_country')->end()
+                                ->scalarNode('name')->defaultValue('ir_address_country_form')->end()
+                                ->arrayNode('validation_groups')
+                                    ->prototype('scalar')->end()
+                                    ->defaultValue(array('Country', 'Default'))
                                 ->end()                
                             ->end()
                         ->end()
