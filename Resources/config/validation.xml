@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
-    <class name="IR\Bundle\CustomerBundle\Model\Address">
+    <class name="IR\Bundle\AddressBundle\Model\Address">
         <property name="firstName">
             <constraint name="NotBlank">
                 <option name="message">ir_address.address.first_name.not_blank</option> 
