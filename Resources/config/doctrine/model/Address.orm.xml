@@ -21,7 +21,7 @@
         <field name="city" column="city" type="string" length="255" />
                 
         <many-to-one field="country" target-entity="IR\Bundle\AddressBundle\Model\CountryInterface">
-            <join-column name="country_id" referenced-column-name="id" />
+            <join-column name="country_id" referenced-column-name="id" nullable="false" />
         </many-to-one>                
         
         <field name="phone" column="phone" type="string" length="255" nullable="true" />
