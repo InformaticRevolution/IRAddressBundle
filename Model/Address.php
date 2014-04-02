@@ -66,13 +66,8 @@ abstract class Address implements AddressInterface
     /**
      * @var string
      */
-    protected $homePhone;  
-    
-    /**
-     * @var string
-     */
-    protected $mobilePhone;   
-    
+    protected $phone;  
+
     /**
      * @var \Datetime
      */
@@ -223,35 +218,19 @@ abstract class Address implements AddressInterface
     /**
      * {@inheritdoc}
      */
-    public function getHomePhone()
+    public function getPhone()
     {
-        return $this->homePhone;
+        return $this->phone;
     }            
 
     /**
      * {@inheritdoc}
      */
-    public function setHomePhone($homePhone) 
+    public function setPhone($phone) 
     {
-        $this->homePhone = $homePhone;
+        $this->phone = $phone;
     }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function getMobilePhone()
-    {
-        return $this->mobilePhone;
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function setMobilePhone($mobilePhone)
-    {
-        $this->mobilePhone = $mobilePhone;
-    }
-    
+
     /**
      * {@inheritdoc}
      */

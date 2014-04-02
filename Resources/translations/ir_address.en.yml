@@ -9,5 +9,4 @@ form:
         postal_code: ZIP / Postal code
         city: City
         country: Country
-        home_phone: Home phone
-        mobile_phone: Mobile phone
+        phone: Phone

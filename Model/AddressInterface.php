@@ -138,33 +138,19 @@ interface AddressInterface
     public function setCountry($country);    
     
     /**
-     * Returns the home phone.
+     * Returns the phone.
      *
      * @return string
      */
-    public function getHomePhone();
+    public function getPhone();
 
     /**
-     * Sets the home phone.
+     * Sets the phone.
      *
-     * @param string $homePhone
+     * @param string $phone
      */
-    public function setHomePhone($homePhone); 
-    
-    /**
-     * Returns the mobile phone.
-     *
-     * @return string
-     */
-    public function getMobilePhone();
+    public function setPhone($phone); 
 
-    /**
-     * Sets the mobile phone.
-     *
-     * @param string $mobilePhone
-     */
-    public function setMobilePhone($mobilePhone); 
-    
     /**
      * Returns the creation time.
      *

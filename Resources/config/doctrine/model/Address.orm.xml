@@ -22,10 +22,8 @@
         
         <field name="country" column="country" type="string" length="2" />
                 
-        <field name="homePhone" column="home_phone" type="string" length="255" nullable="true" />
-        
-        <field name="mobilePhone" column="mobile_phone" type="string" length="255" nullable="true" />
-        
+        <field name="phone" column="phone" type="string" length="255" nullable="true" />
+                
         <field name="createdAt" column="created_at" type="datetime">
             <gedmo:timestampable on="create"/>
         </field>
