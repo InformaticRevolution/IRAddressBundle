@@ -69,7 +69,7 @@
         </property>         
     </class>    
 
-    <class name="IR\Bundle\AddressBundle\Model\Address">
+    <class name="IR\Bundle\AddressBundle\Model\Country">
         <property name="name">
             <constraint name="NotBlank">
                 <option name="message">ir_address.country.name.blank</option> 
