@@ -93,5 +93,15 @@ abstract class Country implements CountryInterface
     public function setEnabled($enabled)
     {
         $this->enabled = $enabled;
-    }            
+    }    
+    
+    /**
+     * Returns the country name.
+     *
+     * @return string
+     */         
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }    
 }
