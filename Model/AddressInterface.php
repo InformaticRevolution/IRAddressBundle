@@ -11,6 +11,9 @@
 
 namespace IR\Bundle\AddressBundle\Model;
 
+use IR\Bundle\ZoneBundle\Model\CountryInterface;
+use IR\Bundle\ZoneBundle\Model\ProvinceInterface;
+
 /**
  * Address Interface.
  * 
@@ -80,21 +83,21 @@ interface AddressInterface
      * @param string $street
      */
     public function setStreet($street);  
-    
-    /**
-     * Returns the administrative division.
-     *
-     * @return string
-     */
-    public function getDivision();
 
     /**
-     * Sets the administrative division.
+     * Returns the province.
      *
-     * @param string $division
+     * @return ProvinceInterface
      */
-    public function setDivision($division);    
-        
+    public function getProvince();
+
+    /**
+     * Sets the province.
+     *
+     * @param ProvinceInterface|null $province
+     */
+    public function setProvince(ProvinceInterface $province = null);       
+    
     /**
      * Returns the postal code.
      *
@@ -122,7 +125,7 @@ interface AddressInterface
      * @param string $city
      */
     public function setCity($city);
-    
+
     /**
      * Returns the country.
      *
@@ -135,7 +138,7 @@ interface AddressInterface
      *
      * @param CountryInterface $country
      */
-    public function setCountry(CountryInterface $country);    
+    public function setCountry(CountryInterface $country);       
     
     /**
      * Returns the phone.

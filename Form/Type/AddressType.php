@@ -14,6 +14,7 @@ namespace IR\Bundle\AddressBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Address Type.
@@ -26,16 +27,23 @@ class AddressType extends AbstractType
      * @var string
      */         
     protected $class;
+    
+    /**
+     * @var EventSubscriberInterface
+     */
+    protected $eventListener;    
 
     
     /**
      * Constructor.
      * 
-     * @param string  $class
+     * @param string                   $class
+     * @param EventSubscriberInterface $eventListener
      */
-    public function __construct($class)
+    public function __construct($class, EventSubscriberInterface $eventListener)
     {
         $this->class = $class;
+        $this->eventListener = $eventListener;
     }    
     
     /**
@@ -45,42 +53,31 @@ class AddressType extends AbstractType
     {
         $builder           
             ->add('firstName', null, array(                 
-                'label' => 'form.address.first_name',
-                'translation_domain' => 'ir_address',
+                'label' => 'ir_address.form.address.first_name',
             )) 
             ->add('lastName', null, array(                 
-                'label' => 'form.address.last_name',
-                'translation_domain' => 'ir_address',
+                'label' => 'ir_address.form.address.last_name',
             )) 
             ->add('companyName', null, array(                 
-                'label' => 'form.address.company_name',
-                'translation_domain' => 'ir_address',
+                'label' => 'ir_address.form.address.company_name',
             ))                 
             ->add('street', null, array(
-                'label' => 'form.address.street', 
-                'translation_domain' => 'ir_address',
-            ))
-            ->add('division', null, array(
-                'label' => 'form.address.division', 
-                'translation_domain' => 'ir_address',
-            ))                   
+                'label' => 'ir_address.form.address.street', 
+            ))             
             ->add('postalCode', null, array(
-                'label' => 'form.address.postal_code', 
-                'translation_domain' => 'ir_address',
+                'label' => 'ir_address.form.address.postal_code', 
             ))                
             ->add('city', null, array(
-                'label' => 'form.address.city',
-                'translation_domain' => 'ir_address',
+                'label' => 'ir_address.form.address.city',
             ))
-            ->add('country', 'ir_address_country_choice', array(
+            ->add('country', 'ir_zone_country_choice', array(
                 'empty_value' => '',
-                'label' => 'form.address.country', 
-                'translation_domain' => 'ir_address',
-            ))  
+                'label' => 'ir_address.form.address.country', 
+            ))              
             ->add('phone', null, array(
-                'label' => 'form.address.phone', 
-                'translation_domain' => 'ir_address',
-            ));
+                'label' => 'ir_address.form.address.phone', 
+            ))
+            ->addEventSubscriber($this->eventListener);
     }
 
     /**

@@ -1,3 +1,2 @@
 db_driver: orm
 address_class: Acme\AddressBundle\Entity\Address
-country_class: Acme\AddressBundle\Entity\Country

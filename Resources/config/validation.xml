@@ -59,36 +59,14 @@
                 <option name="maxMessage">ir_address.address.city.long</option>
                 <option name="groups">Address</option>                                  
             </constraint>              
-        </property>    
+        </property>
         
         <property name="country">
             <constraint name="NotNull">
                 <option name="message">ir_address.address.country.unset</option>
                 <option name="groups">Address</option>                
             </constraint>
-        </property>         
+        </property>                       
     </class>    
-
-    <class name="IR\Bundle\AddressBundle\Model\Country">
-        <property name="name">
-            <constraint name="NotBlank">
-                <option name="message">ir_address.country.name.blank</option> 
-                <option name="groups">Country</option>                       
-            </constraint>
-            <constraint name="Length">
-                <option name="min">2</option>
-                <option name="max">255</option>
-                <option name="minMessage">ir_address.country.name.short</option>
-                <option name="maxMessage">ir_address.country.name.long</option> 
-                <option name="groups">Country</option>                     
-            </constraint>
-        </property> 
-        
-        <property name="isoCode">
-            <constraint name="Country">
-                <option name="message">ir_address.country.iso_code.invalid</option> 
-            </constraint>
-        </property>                         
-    </class>
 
 </constraint-mapping>        

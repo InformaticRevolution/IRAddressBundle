@@ -9,7 +9,7 @@ This version of the bundle requires Symfony 2.3+.
 
 1. Download IRAddressBundle using composer
 2. Enable the Bundle
-3. Create your classes
+3. Create your Address class
 4. Configure the IRAddressBundle
 5. Update your database schema
 6. Enable the doctrine extensions
@@ -49,9 +49,7 @@ public function registerBundles()
 }
 ```
 
-### Step 3: Create your classes
-
-**a) Create your Address class**
+### Step 3: Create Address class
 
 ##### Annotations
 
@@ -130,109 +128,15 @@ In XML:
 </doctrine-mapping>
 ```
 
-**b) Create your Country class**
-
-##### Annotations
-
-``` php
-<?php
-// src/Acme/AddressBundle/Entity/Country.php
-
-namespace Acme\AddressBundle\Entity;
-
-use Doctrine\ORM\Mapping as ORM;
-use IR\Bundle\AddressBundle\Model\Country as BaseCountry;
-
-/**
- * @ORM\Entity
- * @ORM\Table(name="acme_country")
- */
-class Country extends BaseCountry
-{
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
-}
-```
-
-##### Yaml or Xml
-
-``` php
-<?php
-// src/Acme/AddressBundle/Entity/Country.php
-
-namespace Acme\AddressBundle\Entity;
-
-use IR\Bundle\AddressBundle\Model\Country as BaseCountry;
-
-/**
- * Country implementation.
- */
-class Country extends BaseCountry
-{
-}
-```
-
-In YAML:
-
-``` yaml
-# src/Acme/AddressBundle/Resources/config/doctrine/Country.orm.yml
-Acme\AddressBundle\Entity\Country:
-    type:  entity
-    table: acme_country
-    id:
-        id:
-            type: integer
-            generator:
-                strategy: AUTO
-```
-
-In XML:
-
-``` xml
-<!-- src/Acme/AddressBundle/Resources/config/doctrine/Country.orm.xml -->
-<?xml version="1.0" encoding="UTF-8"?>
-
-<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-
-    <entity name="Acme\AddressBundle\Entity\Country" table="acme_country">
-        <id name="id" type="integer" column="id">
-            <generator strategy="AUTO" />
-        </id> 
-    </entity>
-    
-</doctrine-mapping>
-```
-
 ### Step 4: Configure the IRAddressBundle
 
 Add the bundle minimum configuration to your `config.yml` file:
-
-**a) Add the address configuration**
 
 ``` yaml
 # app/config/config.yml
 ir_address:
     db_driver: orm # orm is the only available driver for the moment 
     address_class: Acme\AddressBundle\Entity\Address
-    country_class: Acme\AddressBundle\Entity\Country
-```
-
-**b) Add the CountryInterface path to the RTEL**
-
-``` yaml
-# app/config/config.yml
-doctrine:
-    # ....
-    orm:
-        # ....
-        resolve_target_entities:
-            IR\Bundle\AddressBundle\Model\CountryInterface: Acme\AddressBundle\Entity\Country
 ```
 
 ### Step 5: Update your database schema

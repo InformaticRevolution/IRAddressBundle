@@ -14,12 +14,13 @@
         "php": ">=5.3.2",
         "symfony/framework-bundle": "~2.1",
         "symfony/form": "~2.1",
+        "informaticrevolution/zone-bundle": "*",
 	"stof/doctrine-extensions-bundle": "1.1.*"
     },
     "require-dev": {
-        "doctrine/doctrine-bundle": "*",
         "symfony/yaml": "~2.1",
-        "symfony/validator": "~2.1"
+        "symfony/validator": "~2.1",
+        "doctrine/doctrine-bundle": "*"
     },
     "autoload": {
         "psr-0": { "IR\\Bundle\\AddressBundle": "" }

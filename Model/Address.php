@@ -11,6 +11,9 @@
 
 namespace IR\Bundle\AddressBundle\Model;
 
+use IR\Bundle\ZoneBundle\Model\CountryInterface;
+use IR\Bundle\ZoneBundle\Model\ProvinceInterface;
+
 /**
  * Abstract Address implementation.
  *
@@ -44,9 +47,9 @@ abstract class Address implements AddressInterface
     protected $street;
 
     /**
-     * @var string
+     * @var ProvinceInterface
      */
-    protected $division;     
+    protected $province;    
     
     /**
      * @var string
@@ -57,12 +60,12 @@ abstract class Address implements AddressInterface
      * @var string
      */
     protected $city;
-
+    
     /**
      * @var CountryInterface
      */
-    protected $country;  
-     
+    protected $country;    
+
     /**
      * @var string
      */
@@ -154,17 +157,17 @@ abstract class Address implements AddressInterface
     /**
      * {@inheritdoc}
      */
-    public function getDivision()
+    public function getProvince()
     {
-        return $this->division;
+        return $this->province;
     }
     
     /**
      * {@inheritdoc}
      */
-    public function setDivision($division)    
+    public function setProvince(ProvinceInterface $province = null)    
     {
-        $this->division = $division;
+        $this->province = $province;
     }
     
     /**
@@ -206,15 +209,15 @@ abstract class Address implements AddressInterface
     {
         return $this->country;
     }
-    
+
     /**
      * {@inheritdoc}
      */
-    public function setCountry(CountryInterface $country)   
+    public function setCountry(CountryInterface $country)
     {
         $this->country = $country;
-    }
-        
+    } 
+    
     /**
      * {@inheritdoc}
      */

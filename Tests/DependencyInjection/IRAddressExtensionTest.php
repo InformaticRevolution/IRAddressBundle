@@ -60,17 +60,6 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
         unset($config['address_class']);
         $loader->load(array($config), new ContainerBuilder());
     } 
-    
-    /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     */
-    public function testAddressLoadThrowsExceptionUnlessCountryModelClassSet()
-    {
-        $loader = new IRAddressExtension();
-        $config = $this->getEmptyConfig();
-        unset($config['country_class']);
-        $loader->load(array($config), new ContainerBuilder());
-    }     
 
     public function testDisableAddress()
     {
@@ -81,23 +70,12 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
         $loader->load(array($config), $this->configuration);
         $this->assertNotHasDefinition('ir_address.form.address');
     }
-    
-    public function testDisableCountry()
-    {
-        $this->configuration = new ContainerBuilder();
-        $loader = new IRAddressExtension();
-        $config = $this->getEmptyConfig();
-        $config['country'] = false;
-        $loader->load(array($config), $this->configuration);
-        $this->assertNotHasDefinition('ir_address.form.country');
-    }    
-    
+
     public function testAddressLoadModelClassWithDefaults()
     {
         $this->createEmptyConfiguration();
 
         $this->assertParameter('Acme\AddressBundle\Entity\Address', 'ir_address.model.address.class');
-        $this->assertParameter('Acme\AddressBundle\Entity\Country', 'ir_address.model.country.class');
     }        
 
     public function testAddressLoadModelClass()
@@ -105,7 +83,6 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
         $this->createFullConfiguration();
 
         $this->assertParameter('Acme\AddressBundle\Entity\Address', 'ir_address.model.address.class');
-        $this->assertParameter('Acme\AddressBundle\Entity\Country', 'ir_address.model.country.class');
     }      
     
     public function testAddressLoadManagerClassWithDefaults()
@@ -114,7 +91,6 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertParameter('orm', 'ir_address.db_driver');
         $this->assertAlias('ir_address.manager.address.default', 'ir_address.manager.address');
-        $this->assertAlias('ir_address.manager.country.default', 'ir_address.manager.country');
     }   
     
     public function testAddressLoadManagerClass()
@@ -123,7 +99,6 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertParameter('orm', 'ir_address.db_driver');
         $this->assertAlias('acme_address.manager.address', 'ir_address.manager.address');
-        $this->assertAlias('acme_address.manager.country', 'ir_address.manager.country');
     }       
     
     public function testAddressLoadFormClassWithDefaults()
@@ -131,7 +106,6 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
         $this->createEmptyConfiguration();
 
         $this->assertParameter('ir_address', 'ir_address.form.type.address');
-        $this->assertParameter('ir_address_country', 'ir_address.form.type.country');
     }     
     
     public function testAddressLoadFormClass()
@@ -139,7 +113,6 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
         $this->createFullConfiguration();
 
         $this->assertParameter('acme_address', 'ir_address.form.type.address');
-        $this->assertParameter('acme_address_country', 'ir_address.form.type.country');
     }    
  
     public function testAddressLoadFormNameWithDefaults()
@@ -147,7 +120,6 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
         $this->createEmptyConfiguration();
 
         $this->assertParameter('ir_address_form', 'ir_address.form.name.address');
-        $this->assertParameter('ir_address_country_form', 'ir_address.form.name.country');
     }
 
     public function testAddressLoadFormName()
@@ -155,7 +127,6 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
         $this->createFullConfiguration();
 
         $this->assertParameter('acme_address_form', 'ir_address.form.name.address');
-        $this->assertParameter('acme_address_country_form', 'ir_address.form.name.country');
     }
 
     public function testAddressLoadFormServiceWithDefaults()
@@ -163,7 +134,6 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
         $this->createEmptyConfiguration();
 
         $this->assertHasDefinition('ir_address.form.address');
-        $this->assertHasDefinition('ir_address.form.country');
     }
 
     public function testAddressLoadFormService()
@@ -171,7 +141,6 @@ class IRAddressExtensionTest extends \PHPUnit_Framework_TestCase
         $this->createFullConfiguration();
 
         $this->assertHasDefinition('ir_address.form.address'); 
-        $this->assertHasDefinition('ir_address.form.country'); 
     }
 
     protected function createEmptyConfiguration()

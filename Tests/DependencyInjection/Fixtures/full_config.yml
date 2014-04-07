@@ -1,15 +1,8 @@
 db_driver: orm
 address_class: Acme\AddressBundle\Entity\Address
-country_class: Acme\AddressBundle\Entity\Country
 address_manager: acme_address.manager.address
-country_manager: acme_address.manager.country
 address:
     form:
         type: acme_address
         name: acme_address_form
-        validation_groups: [acme_address]
-country:
-    form:
-        type: acme_address_country
-        name: acme_address_country_form
-        validation_groups: [acme_country]        
+        validation_groups: [acme_address]      

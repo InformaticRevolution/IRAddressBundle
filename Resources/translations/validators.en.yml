@@ -21,13 +21,4 @@ ir_address:
             long: The city cannot be longer than {{ limit }} characters
         
         country:
-            unset: Please select a country        
-            
-    country:
-        name:
-            blank: Please enter a name
-            short: The name must be at least {{ limit }} characters long
-            long: The name cannot be longer than {{ limit }} characters 
-            
-        iso_code: 
-            blank: Invalid code              
+            unset: Please select a country          

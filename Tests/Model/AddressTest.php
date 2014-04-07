@@ -11,8 +11,9 @@
 
 namespace IR\Bundle\AddressBundle\Tests\Model;
 
+use IR\Bundle\ZoneBundle\Model\CountryInterface;
+use IR\Bundle\ZoneBundle\Model\ProvinceInterface;
 use IR\Bundle\AddressBundle\Model\AddressInterface;
-use IR\Bundle\AddressBundle\Model\CountryInterface;
 
 /**
  * Address Test.
@@ -43,10 +44,10 @@ class AddressTest extends \PHPUnit_Framework_TestCase
             array('lastName', 'Brown', null),
             array('companyName', 'Apple Inc', null),
             array('street', '439 Karley Loaf Suite', null),
-            array('division', 'NewYork', null),
+            array('province', $this->getProvince(), null),
             array('postalCode', '63419', null),
             array('city', 'New York', null),
-            array('country', $this->getCountry(), null),
+            array('country', $this->getCountry(), null), 
             array('phone', '132-149-0269', null),
             array('createdAt', new \DateTime(), null),
             array('updatedAt', new \DateTime(), null),              
@@ -59,13 +60,21 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     protected function getAddress()
     {
         return $this->getMockForAbstractClass('IR\Bundle\AddressBundle\Model\Address');
-    } 
+    }    
+    
+    /**
+     * @return ProvinceInterface
+     */
+    protected function getProvince()
+    {
+        return $this->getMockForAbstractClass('IR\Bundle\ZoneBundle\Model\ProvinceInterface');
+    }       
     
     /**
      * @return CountryInterface
      */
     protected function getCountry()
     {
-        return $this->getMockForAbstractClass('IR\Bundle\AddressBundle\Model\CountryInterface');
+        return $this->getMockForAbstractClass('IR\Bundle\ZoneBundle\Model\CountryInterface');
     }     
 }

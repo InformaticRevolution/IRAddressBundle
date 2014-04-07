@@ -1,0 +1,13 @@
+ir_address:
+    # Form field labels
+    form:  
+        address:
+            first_name: Prénom
+            last_name: Nom
+            company_name: Société
+            street: Adresse
+            province: État / Province
+            postal_code: Code postal
+            city: Ville
+            country: Pays
+            phone: Téléphone
