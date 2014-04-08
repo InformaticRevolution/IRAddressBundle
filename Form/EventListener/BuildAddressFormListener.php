@@ -71,6 +71,7 @@ class BuildAddressFormListener implements EventSubscriberInterface
             $form = $event->getForm();
             
             $form->add('province', 'ir_zone_province_choice', array(
+                'empty_value' => '',
                 'country' => $country, 
                 'label'   => 'ir_address.form.product.province',
             ));
@@ -99,6 +100,7 @@ class BuildAddressFormListener implements EventSubscriberInterface
             $form = $event->getForm();
             
             $form->add('province', 'ir_zone_province_choice', array(
+                'empty_value' => '',
                 'country' => $country, 
                 'label'   => 'ir_address.form.product.province',
             ));
