@@ -15,6 +15,9 @@ ir_address:
             short: The street must be at least {{ limit }} characters long
             long: The street cannot be longer than {{ limit }} characters
 
+        province:
+            invalid: Please select a province
+
         city: 
             blank: Please enter a city
             short: The city must be at least {{ limit }} characters long
