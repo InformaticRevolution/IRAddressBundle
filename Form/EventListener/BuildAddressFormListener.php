@@ -73,7 +73,7 @@ class BuildAddressFormListener implements EventSubscriberInterface
             $form->add('province', 'ir_zone_province_choice', array(
                 'empty_value' => '',
                 'country' => $country, 
-                'label'   => 'ir_address.form.product.province',
+                'label'   => 'ir_address.form.address.province',
             ));
         }      
     } 
@@ -102,7 +102,7 @@ class BuildAddressFormListener implements EventSubscriberInterface
             $form->add('province', 'ir_zone_province_choice', array(
                 'empty_value' => '',
                 'country' => $country, 
-                'label'   => 'ir_address.form.product.province',
+                'label'   => 'ir_address.form.address.province',
             ));
         }
     }    
