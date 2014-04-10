@@ -15,13 +15,13 @@ ir_address:
             short: L'adresse doit comporter au moins {{ limit }} caractères
             long: L'adresse ne doit pas comporter plus de {{ limit }} caractères
 
-        province:
-            invalid: Veuillez sélectionner un état
-
         city: 
             blank: Veuillez saisir une ville
             short: La ville doit comporter au moins {{ limit }} caractères
             long: La ville ne doit pas comporter plus de {{ limit }} caractères
+
+        province:
+            invalid: Veuillez sélectionner un état
 
         country:
             unset: Veuillez sélectionner un pays

@@ -63,13 +63,13 @@ class AddressType extends AbstractType
             ))                 
             ->add('street', null, array(
                 'label' => 'ir_address.form.address.street', 
-            ))             
+            ))            
+            ->add('city', null, array(
+                'label' => 'ir_address.form.address.city',
+            ))                
             ->add('postalCode', null, array(
                 'label' => 'ir_address.form.address.postal_code', 
             ))                
-            ->add('city', null, array(
-                'label' => 'ir_address.form.address.city',
-            ))
             ->add('country', 'ir_zone_country_choice', array(
                 'empty_value' => '',
                 'label' => 'ir_address.form.address.country', 

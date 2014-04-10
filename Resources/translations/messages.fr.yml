@@ -6,8 +6,8 @@ ir_address:
             last_name: Nom
             company_name: Société
             street: Adresse
+            city: Ville
             province: État / Province
             postal_code: Code postal
-            city: Ville
             country: Pays
             phone: Téléphone

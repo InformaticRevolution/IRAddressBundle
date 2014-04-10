@@ -14,14 +14,14 @@
 
         <field name="street" column="street" type="string" length="255" />
         
+        <field name="city" column="city" type="string" length="255" />
+        
         <many-to-one field="province" target-entity="IR\Bundle\ZoneBundle\Model\ProvinceInterface">
             <join-column name="province_id" referenced-column-name="id" />
         </many-to-one>
                 
         <field name="postalCode" column="postal_code" type="string" length="255" nullable="true" />
         
-        <field name="city" column="city" type="string" length="255" />
-
         <many-to-one field="country" target-entity="IR\Bundle\ZoneBundle\Model\CountryInterface">
             <join-column name="country_id" referenced-column-name="id" nullable="false" />
         </many-to-one>
