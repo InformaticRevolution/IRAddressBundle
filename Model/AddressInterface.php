@@ -83,6 +83,20 @@ interface AddressInterface
      * @param string $street
      */
     public function setStreet($street);  
+    
+    /**
+     * Returns the city.
+     *
+     * @return string
+     */
+    public function getCity();
+
+    /**
+     * Sets the city.
+     *
+     * @param string $city
+     */
+    public function setCity($city);
 
     /**
      * Returns the province.
@@ -111,20 +125,6 @@ interface AddressInterface
      * @param string $postalCode
      */
     public function setPostalCode($postalCode); 
-    
-    /**
-     * Returns the city.
-     *
-     * @return string
-     */
-    public function getCity();
-
-    /**
-     * Sets the city.
-     *
-     * @param string $city
-     */
-    public function setCity($city);
 
     /**
      * Returns the country.

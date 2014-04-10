@@ -45,7 +45,12 @@ abstract class Address implements AddressInterface
      * @var string
      */
     protected $street;
-
+      
+    /**
+     * @var string
+     */
+    protected $city;
+    
     /**
      * @var ProvinceInterface
      */
@@ -55,12 +60,7 @@ abstract class Address implements AddressInterface
      * @var string
      */
     protected $postalCode; 
-      
-    /**
-     * @var string
-     */
-    protected $city;
-    
+
     /**
      * @var CountryInterface
      */
@@ -157,6 +157,22 @@ abstract class Address implements AddressInterface
     /**
      * {@inheritdoc}
      */
+    public function getCity()
+    {
+        return $this->city;
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+        
+    /**
+     * {@inheritdoc}
+     */
     public function getProvince()
     {
         return $this->province;
@@ -185,23 +201,7 @@ abstract class Address implements AddressInterface
     {
         $this->postalCode = $postalCode;
     }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function getCity()
-    {
-        return $this->city;
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function setCity($city)
-    {
-        $this->city = $city;
-    }
-    
+
     /**
      * {@inheritdoc}
      */
