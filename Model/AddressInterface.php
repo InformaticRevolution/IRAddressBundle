@@ -136,9 +136,9 @@ interface AddressInterface
     /**
      * Sets the country.
      *
-     * @param CountryInterface $country
+     * @param CountryInterface|null $country
      */
-    public function setCountry(CountryInterface $country);       
+    public function setCountry(CountryInterface $country = null);       
     
     /**
      * Returns the phone.

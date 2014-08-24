@@ -213,7 +213,7 @@ abstract class Address implements AddressInterface
     /**
      * {@inheritdoc}
      */
-    public function setCountry(CountryInterface $country)
+    public function setCountry(CountryInterface $country = null)
     {
         $this->country = $country;
     } 
