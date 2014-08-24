@@ -86,6 +86,7 @@ class BuildAddressFormListener implements EventSubscriberInterface
     public function preSubmit(FormEvent $event)
     {
         $data = $event->getData();
+        $form = $event->getForm();
         
         if (!is_array($data) || !array_key_exists('country', $data)) {
             return;
@@ -96,9 +97,10 @@ class BuildAddressFormListener implements EventSubscriberInterface
             return;
         }
 
-        if (!$country->getProvinces()->isEmpty()) {
-            $form = $event->getForm();
-            
+        if ($country->getProvinces()->isEmpty()) {
+            $form->remove('province');
+        }
+        else {
             $form->add('province', 'ir_zone_province_choice', array(
                 'empty_value' => '',
                 'country' => $country, 
