@@ -2,9 +2,9 @@
 
 /*
  * This file is part of the IRAddressBundle package.
- * 
+ *
  * (c) Julien Kirsch <informatic.revolution@gmail.com>
- * 
+ *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
@@ -16,45 +16,45 @@ use IR\Bundle\ZoneBundle\Model\ProvinceInterface;
 
 /**
  * Address Interface.
- * 
+ *
  * @author Julien Kirsch <informatic.revolution@gmail.com>
  */
-interface AddressInterface 
+interface AddressInterface
 {
     /**
      * Returns the id.
-     * 
+     *
      * @return mixed
      */
-    public function getId(); 
-    
+    public function getId();
+
     /**
      * Returns the first name.
      *
-     * @return string 
+     * @return string
      */
-    public function getFirstName(); 
-            
+    public function getFirstName();
+
     /**
      * Sets the first name.
      *
      * @param string $firstName
      */
     public function setFirstName($firstName);
-    
+
     /**
      * Returns the last name.
      *
-     * @return string 
+     * @return string
      */
-    public function getLastName();  
-    
+    public function getLastName();
+
     /**
      * Sets the last name.
      *
      * @param string $lastName
      */
-    public function setLastName($lastName); 
+    public function setLastName($lastName);
 
     /**
      * Returns the company name.
@@ -68,7 +68,7 @@ interface AddressInterface
      *
      * @param string $companyName
      */
-    public function setCompanyName($companyName);    
+    public function setCompanyName($companyName);
 
     /**
      * Returns the street.
@@ -82,8 +82,8 @@ interface AddressInterface
      *
      * @param string $street
      */
-    public function setStreet($street);  
-    
+    public function setStreet($street);
+
     /**
      * Returns the city.
      *
@@ -110,8 +110,8 @@ interface AddressInterface
      *
      * @param ProvinceInterface|null $province
      */
-    public function setProvince(ProvinceInterface $province = null);       
-    
+    public function setProvince(ProvinceInterface $province = null);
+
     /**
      * Returns the postal code.
      *
@@ -124,7 +124,7 @@ interface AddressInterface
      *
      * @param string $postalCode
      */
-    public function setPostalCode($postalCode); 
+    public function setPostalCode($postalCode);
 
     /**
      * Returns the country.
@@ -138,8 +138,8 @@ interface AddressInterface
      *
      * @param CountryInterface|null $country
      */
-    public function setCountry(CountryInterface $country = null);       
-    
+    public function setCountry(CountryInterface $country = null);
+
     /**
      * Returns the phone.
      *
@@ -152,33 +152,5 @@ interface AddressInterface
      *
      * @param string $phone
      */
-    public function setPhone($phone); 
-
-    /**
-     * Returns the creation time.
-     *
-     * @return \Datetime
-     */
-    public function getCreatedAt();   
-    
-    /**
-     * Sets the creation time.
-     * 
-     * @param \Datetime $createdAt
-     */
-    public function setCreatedAt(\Datetime $createdAt);    
-    
-    /**
-     * Returns the last update time.
-     *
-     * @return \Datetime
-     */
-    public function getUpdatedAt();  
-    
-    /**
-     * Sets the last update time.
-     * 
-     * @param \Datetime|null $updatedAt
-     */
-    public function setUpdatedAt(\Datetime $updatedAt = null);       
+    public function setPhone($phone);
 }

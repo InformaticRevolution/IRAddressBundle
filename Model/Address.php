@@ -2,9 +2,9 @@
 
 /*
  * This file is part of the IRAddressBundle package.
- * 
+ *
  * (c) Julien Kirsch <informatic.revolution@gmail.com>
- * 
+ *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
@@ -24,64 +24,53 @@ abstract class Address implements AddressInterface
     /**
      * @var mixed
      */
-    protected $id;    
+    protected $id;
 
     /**
      * @var string
      */
     protected $firstName;
-    
+
     /**
      * @var string
      */
-    protected $lastName;    
-    
+    protected $lastName;
+
     /**
      * @var string
      */
     protected $companyName;
-   
+
     /**
      * @var string
      */
     protected $street;
-      
+
     /**
      * @var string
      */
     protected $city;
-    
+
     /**
      * @var ProvinceInterface
      */
-    protected $province;    
-    
+    protected $province;
+
     /**
      * @var string
      */
-    protected $postalCode; 
+    protected $postalCode;
 
     /**
      * @var CountryInterface
      */
-    protected $country;    
+    protected $country;
 
     /**
      * @var string
      */
-    protected $phone;  
+    protected $phone;
 
-    /**
-     * @var \Datetime
-     */
-    protected $createdAt;
-
-    /**
-     * @var \Datetime
-     */
-    protected $updatedAt;
-    
-    
     /**
      * {@inheritdoc}
      */
@@ -89,7 +78,7 @@ abstract class Address implements AddressInterface
     {
         return $this->id;
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -97,7 +86,7 @@ abstract class Address implements AddressInterface
     {
         return $this->firstName;
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -105,15 +94,15 @@ abstract class Address implements AddressInterface
     {
         $this->firstName = $firstName;
     }
-    
+
     /**
      * {@inheritdoc}
      */
-    public function getLastName()  
+    public function getLastName()
     {
         return $this->lastName;
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -121,7 +110,7 @@ abstract class Address implements AddressInterface
     {
         $this->lastName = $lastName;
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -129,11 +118,11 @@ abstract class Address implements AddressInterface
     {
         return $this->companyName;
     }
-    
+
     /**
      * {@inheritdoc}
      */
-    public function setCompanyName($companyName)  
+    public function setCompanyName($companyName)
     {
         $this->companyName = $companyName;
     }
@@ -145,15 +134,15 @@ abstract class Address implements AddressInterface
     {
         return $this->street;
     }
-    
+
     /**
      * {@inheritdoc}
      */
-    public function setStreet($street)  
+    public function setStreet($street)
     {
         $this->street = $street;
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -161,7 +150,7 @@ abstract class Address implements AddressInterface
     {
         return $this->city;
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -169,7 +158,7 @@ abstract class Address implements AddressInterface
     {
         $this->city = $city;
     }
-        
+
     /**
      * {@inheritdoc}
      */
@@ -177,15 +166,15 @@ abstract class Address implements AddressInterface
     {
         return $this->province;
     }
-    
+
     /**
      * {@inheritdoc}
      */
-    public function setProvince(ProvinceInterface $province = null)    
+    public function setProvince(ProvinceInterface $province = null)
     {
         $this->province = $province;
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -193,11 +182,11 @@ abstract class Address implements AddressInterface
     {
         return $this->postalCode;
     }
-    
+
     /**
      * {@inheritdoc}
      */
-    public function setPostalCode($postalCode) 
+    public function setPostalCode($postalCode)
     {
         $this->postalCode = $postalCode;
     }
@@ -216,53 +205,21 @@ abstract class Address implements AddressInterface
     public function setCountry(CountryInterface $country = null)
     {
         $this->country = $country;
-    } 
-    
+    }
+
     /**
      * {@inheritdoc}
      */
     public function getPhone()
     {
         return $this->phone;
-    }            
+    }
 
     /**
      * {@inheritdoc}
      */
-    public function setPhone($phone) 
+    public function setPhone($phone)
     {
         $this->phone = $phone;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function setCreatedAt(\Datetime $createdAt)
-    {
-        $this->createdAt = $createdAt;
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function setUpdatedAt(\Datetime $updatedAt = null) 
-    {
-        $this->updatedAt = $updatedAt;
-    }    
 }
