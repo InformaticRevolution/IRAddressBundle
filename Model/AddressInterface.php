@@ -57,20 +57,6 @@ interface AddressInterface
     public function setLastName($lastName);
 
     /**
-     * Returns the company name.
-     *
-     * @return string
-     */
-    public function getCompanyName();
-
-    /**
-     * Sets the company name.
-     *
-     * @param string $companyName
-     */
-    public function setCompanyName($companyName);
-
-    /**
      * Returns the street.
      *
      * @return string

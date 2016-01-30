@@ -1,10 +1,9 @@
 ir_address:
     # Form field labels
-    form:   
+    form:
         address:
             first_name: First name
             last_name: Last name
-            company_name: Company
             street: Street address
             city: City
             province: State / Province

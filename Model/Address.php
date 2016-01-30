@@ -39,11 +39,6 @@ abstract class Address implements AddressInterface
     /**
      * @var string
      */
-    protected $companyName;
-
-    /**
-     * @var string
-     */
     protected $street;
 
     /**
@@ -109,22 +104,6 @@ abstract class Address implements AddressInterface
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getCompanyName()
-    {
-        return $this->companyName;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setCompanyName($companyName)
-    {
-        $this->companyName = $companyName;
     }
 
     /**

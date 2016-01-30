@@ -10,8 +10,6 @@
 
         <field name="lastName" column="last_name" type="string" length="255" />
 
-        <field name="companyName" column="company_name" type="string" length="255" nullable="true" />
-
         <field name="street" column="street" type="string" length="255" />
 
         <field name="city" column="city" type="string" length="255" />
